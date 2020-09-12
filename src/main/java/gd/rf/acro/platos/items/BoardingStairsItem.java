@@ -33,7 +33,7 @@ public class BoardingStairsItem extends Item {
         for (int i = 0; i < 30; i++) {
             world.addParticle(ParticleTypes.SMOKE,user.getRotationVector().multiply(i).x,user.getRotationVector().multiply(i).y,user.getRotationVector().multiply(i).z,0,0,0);
         }
-        List<BlockShipEntity> vv = world.getEntitiesByType(PlatosTransporters.BLOCK_SHIP_ENTITY_ENTITY_TYPE,new Box(result.getPos().add(-10,-10,-10),result.getPos().add(10,10,10)), LivingEntity::isAlive);
+        List<BlockShipEntity> vv = world.getEntities(PlatosTransporters.BLOCK_SHIP_ENTITY_ENTITY_TYPE,new Box(result.getPos().add(-10,-10,-10),result.getPos().add(10,10,10)), LivingEntity::isAlive);
         if(vv.size()>0)
         {
             user.startRiding(vv.get(0));
